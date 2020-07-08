@@ -9,7 +9,8 @@
     Sara has label 0
     Chris has label 1
 """
-    
+
+import sklearn.naive_bayes from GaussianNB
 import sys
 from time import time
 sys.path.append("../tools/")
@@ -26,7 +27,9 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
-
+clf = GaussianNB()
+clf.fit(features_train,labels_train)
+print clf.score(features_test,labels_test)
 
 #########################################################
 
